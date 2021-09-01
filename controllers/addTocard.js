@@ -2,9 +2,7 @@ const connection=require('../database/connection')
 
 module.exports.Addcard=async(req, res) => {
     let userItemId=req.params.id;
-    // console.log(userItemId)
     let userCategory=req.body.category
-    // console.log(userCategory)
 
     if (userCategory=="nonveg"){
 

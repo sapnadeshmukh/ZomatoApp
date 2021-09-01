@@ -11,23 +11,14 @@ module.exports.order=async(req, res) => {
 
         var query = connection.query(sql,(err,data)=>{
             if(err) throw err;
-            // console.log(data)
-            // console.log(data[0])
             let menu=data[0]["menu"]
-            // console.log(menu)
             let hotel=data[0]["restaurants_name"]
-            // console.log(hotel)
             let price=data[0]["price"]
-            // console.log(price)
             let time="45 min"
-            // console.log(time)
             let DeleveryCharge=60
-            // console.log(DeleveryCharge)
 
             let totalcost=price+DeleveryCharge
-            // console.log(totalcost)
             let payment=readlinesync.question("how you will pay  online or by cash--")
-            // console.log(payment)
 
 
             let sql='INSERT INTO orderID (menu,TIME,totalcost,delivery_charge,payments,price,restaurants_name) VALUES ?';
@@ -47,7 +38,6 @@ module.exports.order=async(req, res) => {
 
 
 
-            //payments varchar(50)
 
 
             res.send(data)

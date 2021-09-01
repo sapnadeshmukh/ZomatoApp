@@ -2,7 +2,6 @@ const connection=require('../database/connection')
 
 module.exports.foodCategory=async(req, res) => {
     let userCategory=req.body.category
-    console.log(userCategory)
 
     if (userCategory=="nonveg"){
         var sql = "SELECT * FROM  Non_Veg_restaurants";

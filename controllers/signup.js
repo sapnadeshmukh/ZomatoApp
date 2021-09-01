@@ -26,10 +26,6 @@ module.exports.register=async(req,res)=>{
 
             
             })
-            // const data = { email: result.email }
-            // const createToken = jwt.sign(data, process.env.SECRETKEY,{expiresIn:"1h"});
-            // console.log(createToken)
-            // return res.status(200).json({message:"Signed up successfully!!!!!!",token:createToken});
             const Data = { email: req.body.email }
             const accessToken = tokenData(Data, process.env.SECRETKEY,{expiresIn: "24h"})
             console.log("token is ==",accessToken)
